@@ -8,9 +8,9 @@ app = Flask(__name__)
 def index():
     return(redirect(SITE_URL))
 
-@app.route('/<int:year>/<int:month>/<path:slug>')
+@app.route('/<int:year>/<path:month>/<path:slug>/')
 def posts(year, month, slug):
-    return(redirect(SITE_URL+'/{0}/{1}/{2}.html'.format(year, month, slug)))
+    return(redirect(SITE_URL+'/blog/{0}/{1}/{2}.html'.format(year, month, slug)))
 
 @app.errorhandler(404)
 def page_not_found(error):
