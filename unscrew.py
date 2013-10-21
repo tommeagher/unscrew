@@ -14,7 +14,7 @@ def posts(year, month, slug):
 
 @app.errorhandler(404)
 def page_not_found(error):
-    return "I moved the site, Try this"
+    return(redirect(SITE_URL+"/404/"))
 
 if __name__ == '__main__':
     #app.debug = True
