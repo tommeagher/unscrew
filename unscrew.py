@@ -10,7 +10,7 @@ def index():
     return(redirect(SITE_URL))
 
 #redirect the Wordpress posts to new site
-@app.route('/<int:year>/<int:month>/<path:slug>/')
+@app.route('/<int:year>/<path:month>/<path:slug>/')
 def posts(year, month, slug):
     return(redirect(SITE_URL+'/blog/{0}/{1}/{2}.html'.format(year, month, slug)))
 
