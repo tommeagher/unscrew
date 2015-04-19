@@ -1,8 +1,10 @@
 from flask import Flask, make_response, redirect, url_for
-from local_settings import SECRET_KEY, SITE_URL
+from os import environ
 
+SECRET_KEY = environ.get('SECRET_KEY')
 app = Flask(__name__)
 #app.config.from_object(__name__)
+SITE_URL = environ.get('SITE_URL')
 
 #redirect the main page
 @app.route('/')
